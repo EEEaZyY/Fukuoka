@@ -1,53 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>List of tourist places in Fukuoka</title>
-  </head>
-  <body>
-    <h1>福岡旅行候補地</h1>
+<html lang="ko">
 
-    <div id="slides">
-      <div class="slides-container">
-        <img src="marineworld.jpeg">
-        <img src="Marinoa City Fukuoka.jpeg">
-        <img src="Fukuokashi Seaside Park.jpg">
-        <img src="Canal City HAKATA.jpg">
-      </div>
-    </div>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-    <link rel="stylesheet" href="css/superslides.css">
-    <script src="js/jquery.superslides.js" type="text/javascript">
-    </script>
-    <script>
-    $(function() {
-       $('#slides').superslides({
-          hashchange: false,
-           speed: 5000,
-            animation: 'fade'
-          });
-          /*touchSwipe*/ $('#slides').swipe({ swipeLeft:function() { $(this).superslides('animate', 'next'); }, swipeRight:function() { $(this).superslides('animate', 'prev'); } });
+<head>
+  <meta charset="UTF-8">
+  <title>List of tourlist places in Fukuoka</title>
+  <style type="text/css">
+    *{margin: 0; padding: 0; list-style: none;}
+    #slideWrap { width: 800px; height: 1400px; overflow: hidden; position: relative; }
+    #slider { height: 100%; position: absolute;}
+    #slider ul { display: inline; }
+    #slider li { float: left; width: 800px; height: 100%;}
 
-    </script>
+  </style>
+</head>
 
-
-
-
-
-    <div>
-    <ul>
-      <li><A href = "https://marine-world.jp/" target = "blank"> マリンワールド海ノ中道</A></li>
-      <li><A href = "https://www.marinoacity.com/" target = "blank"> マリノアシティ福岡</A></li>
-      <li><A href = "https://www.marizon-kankyo.jp/" target = "blank"> シーサイドももち海浜公園</A></li>
-      <li><A href = "https://canalcity.co.jp/" target = "blank"> キャナルシティ博多</A></li>
-      <li><A href = "https://marine-world.jp/" target = "blank"> マリンワールド海ノ中道</A></li>
-      <li><A href = "https://marine-world.jp/" target = "blank"> マリンワールド海ノ中道</A></li>
-
+<body>
+  <div id="slideWrap">
+    <ul id="slider">
+        <li><a href="#"><img src="Canal City HAKATA.jpg" alt="슬라이드1"></a></li>
+        <li><a href="#"><img src="marineworld.jpg" alt="슬라이드2"></a></li>
+        <li><a href="#"><img src="Marinoa City Fukuoka.jpeg" alt="슬라이드3"></a></li>
     </ul>
   </div>
 
+  <script>
+    //자동 스크롤 애니메이션
+    var ul = document.querySelector('#slider')
+    var slideNumber = document.querySelector('#slider').childElementCount
+    var li = document.querySelector('#slider>li')
 
-     </ul>
+    var firstItemClone = ul.firstElementChild.cloneNode(true);
+    ul.appendChild(firstItemClone);
+    ul.style.width = (slideNumber + 1) * 800 + 'px'
 
-  </body>
+    function move(){
+      var i = 0;
+
+      setInterval(function(){
+        ul.style.transition = '0.2s';
+        ul.style.transform = 'translate3d(-'+800*(i+1)+'px, 0px, 0px)';
+
+        i++;
+
+        if (i == slideNumber){
+          setTimeout(function(){
+            ul.style.transition = '0s';
+            ul.style.transform = "translate3d(0px, 0px, 0px)";
+          },201)
+          i = 0;
+        }
+      },3000);
+    }
+
+    document.addEventListener("DOMContentLoaded",function(){
+      move();
+    });
+
+  </script>
+</body>
+
 </html>
+
+
+
+출처: https://sudal89.tistory.com/47 [가을밤에 내리는 비]
