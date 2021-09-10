@@ -13,8 +13,8 @@ const menuDb = {
             url : '3.Tourist Places.html'
         },
         {
-            name : 'Study',
-            url : './study.html'
+            name : 'Gourmet',
+            url : '7.Fukuoka Groumet.html'
         },
         {
             name : 'FAQ',
