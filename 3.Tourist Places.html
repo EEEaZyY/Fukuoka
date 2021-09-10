@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>List of tourist places in Fukuoka</title>
+  <style type="text/css">
+    *{margin: 0; padding: 0; list-style: none;}
+    #slideWrap { width: 800px; height: 1400px; overflow: hidden; position: relative; }
+    #slider { height: 100%; position: absolute;}
+    #slider ul { display: inline; }
+    #slider li { float: left; width: 800px; height: 100%;}
+  </style>
+  <link rel="stylesheet" href="./menu-style.css">
+
+</head>
+
+<body>
+  <script src="./menu-script.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+
+  <div id="slideWrap">
+    <ul id="slider">
+        <li><a href="4.CanelCityHAKATA.html"><img src="Canal City HAKATA.jpg" alt="슬라이드1"></a></li>
+        <li><a href="5.Marine World.html"><img src="marineworld.jpg" alt="슬라이드2"></a></li>
+        <li><a href="6. Marinoa.html"><img src="Marinoa City Fukuoka.jpeg" alt="슬라이드3"></a></li>
+    </ul>
+  </div>
+
+  <script>
+    //자동 스크롤 애니메이션
+    var ul = document.querySelector('#slider')
+    var slideNumber = document.querySelector('#slider').childElementCount
+    var li = document.querySelector('#slider>li')
+
+    var firstItemClone = ul.firstElementChild.cloneNode(true);
+    ul.appendChild(firstItemClone);
+    ul.style.width = (slideNumber + 1) * 800 + 'px'
+
+    function move(){
+      var i = 0;
+
+      setInterval(function(){
+        ul.style.transition = '0.3s';
+        ul.style.transform = 'translate3d(-'+800*(i+1)+'px, 0px, 0px)';
+
+        i++;
+
+        if (i == slideNumber){
+          setTimeout(function(){
+            ul.style.transition = '0s';
+            ul.style.transform = "translate3d(0px, 0px, 0px)";
+          },201)
+          i = 0;
+        }
+      },3000);
+    }
+
+    document.addEventListener("DOMContentLoaded",function(){
+      move();
+    });
+
+  </script>
+</body>
+
+</html>

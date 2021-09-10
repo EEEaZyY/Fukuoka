@@ -1,0 +1,97 @@
+<<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./menu-style.css">
+    <title>Marine World</title>
+  </head>
+  <body>
+    <style type="text/css">
+      .links{
+      color:darkblue;
+      font-size:1.5em;
+      padding:0.3em 0.5em;
+      margin:0.2em;
+      text-decoration-line:none;
+      }
+      body{
+        background-color:#FAFAFA;
+      }
+
+      h1{
+        text-align:center;
+      }
+      a{
+        text-decoration-line: none;
+        color:darkblue;
+      }
+      </style>
+
+
+    <script src="./menu-script.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <h1 style=color:darkblue><a href="https://canalcity.co.jp/", target="_blank">Canel City HAKATA</a></h1>
+    <style>
+      .answer {
+        display: none;
+        padding-bottom: 30px;
+      }
+      #faq-title {
+        font-size: 25px;
+      }
+      .faq-content {
+        border-bottom: 1px solid #e0e0e0;
+      }
+      .question {
+        font-size: 19px;
+        padding: 30px 0;
+        cursor: pointer;
+        border: none;
+        outline: none;
+        background: none;
+        width: 100%;
+        text-align: left;
+      }
+      .question:hover {
+        color: #2962ff;
+      }
+      [id$="-toggle"] {
+        margin-right: 15px;
+      }
+    </style>
+    <div class="faq-content">
+      <button class="question" id="que-1">
+        <span id="que-1-toggle">+</span>
+        <span>Business Hour</span></button>
+      <div class="answer" id="ans-1"><img src="./CanelCityHAKATA/hour.jpg"></div>
+    </div>
+    <div class="faq-content">
+      <button class="question" id="que-2"><span id="que-2-toggle">+</span>
+        <span>Parking</span></button>
+      <div class="answer" id="ans-2"><img src="./CanelCityHAKATA/Parking.jpg"></div>
+    </div>
+
+    <script>
+      const items = document.querySelectorAll('.question');
+
+      function openCloseAnswer() {
+        const answerId = this.id.replace('que', 'ans');
+
+        if(document.getElementById(answerId).style.display === 'block') {
+          document.getElementById(answerId).style.display = 'none';
+          document.getElementById(this.id + '-toggle').textContent = '+';
+        } else {
+          document.getElementById(answerId).style.display = 'block';
+          document.getElementById(this.id + '-toggle').textContent = '-';
+        }
+      }
+
+      items.forEach(item => item.addEventListener('click', openCloseAnswer));
+    </script>
+
+
+
+
+
+  </body>
+</html>
