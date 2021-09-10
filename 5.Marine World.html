@@ -25,6 +25,23 @@
         text-decoration-line: none;
         color:darkblue;
       }
+      table{
+        width:500px;
+        border:2px solid white;
+        border-collapse: collapse;
+       }
+       th,td{
+         border:3px solid #F2F2F2;
+         padding:10px;
+         text-align: center;
+         background-color: white;
+         color:#003458;
+       }
+       th{
+         background-color: #003458;
+         color: white;
+
+       }
       </style>
 
 
@@ -63,17 +80,77 @@
       <button class="question" id="que-1">
         <span id="que-1-toggle">+</span>
         <span>Business Hour</span></button>
-      <div class="answer" id="ans-1"><img src="./MarineWorld/hours.jpg"></div>
+      <div class="answer" id="ans-1">
+      <table>
+        <tr>
+          <th></th>
+            <th>Open</th>
+            <th>Close</th>
+          </tr>
+          <td style=font-weight:bold;>off-season</td>
+            <td>9:30</td>
+            <td>17:30</td>
+         </tr>
+         <tr>
+           <td style=font-weight:bold;> GW/Summer holidays</td>
+           <td>9:30</td>
+           <td>21:00</td>
+         </tr>
+         <td style=font-weight:bold;>Dec-Feb</td>
+           <td>10:00</td>
+           <td>17:00</td>
+        </tr>
+        <tr>
+          <td style=font-weight:bold;> Oct 30th Halloween night</td>
+          <td>9:30</td>
+          <td>21:00</td>
+        </tr>
+        <tr>
+          <td style=font-weight:bold;> Dec 24th 25th Christmas night </td>
+          <td>10:00</td>
+          <td>21:00</td>
+        </tr>
+        </table>
     </div>
     <div class="faq-content">
       <button class="question" id="que-2"><span id="que-2-toggle">+</span>
         <span>Entrance Fee</span></button>
-      <div class="answer" id="ans-2"><img src="./MarineWorld/Fee.jpg"></div>
+      <div class="answer" id="ans-2">
+      <table>
+        <tr>
+          <th></th>
+            <th>Adults</th>
+            <th>High School Students</th>
+          </tr>
+          <td style=font-weight:bold;>Single</td>
+            <td>2,350 yen</td>
+            <td>2,350 yen</td>
+         </tr>
+         <tr>
+           <td style=font-weight:bold;> Annual Passport</td>
+           <td>4,600 yen</td>
+           <td>4,600 yen</td>
+         </tr>
+        </table>
     </div>
     <div class="faq-content">
       <button class="question" id="que-3"><span id="que-3-toggle">+</span>
         <span>Parking</span></button>
-      <div class="answer" id="ans-3"><img src="./MarineWorld/Parking.jpg"></div>
+      <div class="answer" id="ans-3">
+        <table>
+          <tr>
+            <th></th>
+              <th>truck/bus</th>
+              <th>passenger car</th>
+              <th>motorcycle</th>
+            </tr>
+            <td style=font-weight:bold;>Parking Fee</td>
+              <td>1,580 yen</td>
+              <td>530 yen</td>
+              <td>270 yen</td>
+           </tr>
+          </table>
+        </div>
     </div>
 
     <script>

@@ -15,7 +15,7 @@
       text-decoration-line:none;
       }
       body{
-        background-color:#FAFAFA;
+        background-color:#F2F2F2;
       }
 
       h1{
@@ -58,17 +58,70 @@
       [id$="-toggle"] {
         margin-right: 15px;
       }
+      table{
+        width:300px;
+        border:2px solid white;
+        border-collapse: collapse;
+       }
+       th,td{
+         border:3px solid #F2F2F2
+;
+         padding:10px;
+         text-align: center;
+         background-color: white;
+         color:#003458;
+       }
+       th{
+         background-color: #003458;
+         color: white;
+
+       }
     </style>
     <div class="faq-content">
       <button class="question" id="que-1">
         <span id="que-1-toggle">+</span>
         <span>Business Hour</span></button>
-      <div class="answer" id="ans-1"><img src="./CanelCityHAKATA/hour.jpg"></div>
+      <div class="answer" id="ans-1">
+        <div style=font-weight:bold;>Always open</div>
+        <table>
+          <tr>
+            <th></th>
+              <th>Open</th>
+              <th>Close</th>
+            </tr>
+          	<td style=font-weight:bold;>Shop</td>
+              <td>10:00</td>
+              <td>21:00</td>
+           </tr>
+           <tr>
+    	       <td style=font-weight:bold;> Restaurant</td>
+             <td>10:00</td>
+             <td>23:00</td>
+           </tr>
+          </table>
+      </div>
     </div>
     <div class="faq-content">
       <button class="question" id="que-2"><span id="que-2-toggle">+</span>
         <span>Parking</span></button>
-      <div class="answer" id="ans-2"><img src="./CanelCityHAKATA/Parking.jpg"></div>
+      <div class="answer" id="ans-2">
+      <table>
+        <tr>
+          <th></th>
+            <th>Maximum fee</th>
+            <th>Parking Fee</th>
+          </tr>
+          <td style=font-weight:bold;>Weekday</td>
+            <td>All day</td>
+            <td>200yen/30minutes</td>
+         </tr>
+         <tr>
+           <td style=font-weight:bold;> Weekend</td>
+           <td>All day</td>
+           <td>200yen/30minutes</td>
+         </tr>
+       </table>
+     </div>
     </div>
 
     <script>

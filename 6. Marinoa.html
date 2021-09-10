@@ -25,6 +25,22 @@
         text-decoration-line: none;
         color:darkblue;
       }
+      table{
+        width:500px;
+        border:2px solid white;
+        border-collapse: collapse;
+       }
+       th,td{
+         border:3px solid #F2F2F2
+;
+         padding:10px;
+         text-align: center;
+         background-color: white;
+         color:#003458;
+       }
+       th{
+         background-color: #003458;
+         color: white;
       </style>
 
 
@@ -63,12 +79,56 @@
       <button class="question" id="que-1">
         <span id="que-1-toggle">+</span>
         <span>Business Hour</span></button>
-      <div class="answer" id="ans-1"><img src="./marinoa/hour.jpg"></div>
+      <div class="answer" id="ans-1">
+        <div style=font-weight:bold;>Always open</div>
+        <table>
+          <tr>
+            <th></th>
+              <th>Open</th>
+              <th>Close</th>
+            </tr>
+            <td style=font-weight:bold;>Shop</td>
+              <td>10:00</td>
+              <td>21:00</td>
+           </tr>
+           <tr>
+             <td style=font-weight:bold;> Restaurant</td>
+             <td>11:00</td>
+             <td>23:00</td>
+           </tr>
+          </table>
+      </div>
     </div>
     <div class="faq-content">
       <button class="question" id="que-2"><span id="que-2-toggle">+</span>
         <span>Parking</span></button>
-      <div class="answer" id="ans-2"><img src="./marinoa/parking.jpg"></div>
+      <div class="answer" id="ans-2">
+        <table>
+          <tr>
+            <th></th>
+              <th>Weekday</th>
+              <th>Weekend(holidays)</th>
+            </tr>
+            <td style=font-weight:bold;>Parking Area 1</td>
+              <td>9:45~23:00</td>
+              <td>9:00~23:00</td>
+           </tr>
+           <tr>
+             <td style=font-weight:bold;>Parking Area 2</td>
+             <td>9:45~21:00</td>
+             <td>9:00~21:00</td>
+           </tr>
+           <td style=font-weight:bold;>Parking Area 3</td>
+             <td>9:45~21:00</td>
+             <td>9:00~21:00</td>
+          </tr>
+          <tr>
+            <td style=font-weight:bold;> Parking Area 4</td>
+            <td>7:00~21:00</td>
+            <td>7:00~21:00</td>
+          </tr>
+          </table>
+        </div>
     </div>
 
     <script>
