@@ -17,8 +17,8 @@ const menuDb = {
             url : '7.Fukuoka Groumet.html'
         },
         {
-            name : 'FAQ',
-            url : './FAQ.html'
+            name : 'Schedule',
+            url : '8.Schedule.html'
         },
         {
             name : 'Bookings',

@@ -1,66 +1,405 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Travel to Fukuoka | Tourist places</title>
+        <link rel="stylesheet" href="./menu-style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Kosugi&family=M+PLUS+1p:wght@300&family=M+PLUS+Rounded+1c:wght@500&display=swap" rel="stylesheet">
 
-<head>
-  <meta charset="UTF-8">
-  <title>tourist places in Fukuoka</title>
-  <style type="text/css">
-    *{margin: 0; padding: 0; list-style: none;}
-    #slideWrap { width: 800px; height: 1400px; overflow: hidden; position: relative; }
-    #slider { height: 100%; position: absolute;}
-    #slider ul { display: inline; }
-    #slider li { float: left; width: 800px; height: 100%;}
-  </style>
-  <link rel="stylesheet" href="./menu-style.css">
 
-</head>
-
-<body>
-  <script src="./menu-script.js"></script>
-  <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
-
-  <div id="slideWrap">
-    <ul id="slider">
-        <li><a href="4.CanelCityHAKATA.html"><img src="Canal City HAKATA.jpg" alt="슬라이드1"></a></li>
-        <li><a href="5.Marine World.html"><img src="marineworld.jpg" alt="슬라이드2"></a></li>
-        <li><a href="6. Marinoa.html"><img src="Marinoa City Fukuoka.jpeg" alt="슬라이드3"></a></li>
-    </ul>
-  </div>
-
-  <script>
-    //자동 스크롤 애니메이션
-    var ul = document.querySelector('#slider')
-    var slideNumber = document.querySelector('#slider').childElementCount
-    var li = document.querySelector('#slider>li')
-
-    var firstItemClone = ul.firstElementChild.cloneNode(true);
-    ul.appendChild(firstItemClone);
-    ul.style.width = (slideNumber + 1) * 800 + 'px'
-
-    function move(){
-      var i = 0;
-
-      setInterval(function(){
-        ul.style.transition = '0.3s';
-        ul.style.transform = 'translate3d(-'+800*(i+1)+'px, 0px, 0px)';
-
-        i++;
-
-        if (i == slideNumber){
-          setTimeout(function(){
-            ul.style.transition = '0s';
-            ul.style.transform = "translate3d(0px, 0px, 0px)";
-          },201)
-          i = 0;
-        }
-      },3000);
+  </head>
+  <body>
+    <style type="text/css">
+    .tourist {font-family: 'M PLUS 1p', sans-serif;
+    padding:10px;
+    }
+    .links{
+    color:darkblue;
+    font-size:1.5em;
+    padding:0.3em 0.5em;
+    margin:0.2em;
+    text-decoration-line:none;
+    }
+    body{
+      background-color:#F2F2F2;
     }
 
-    document.addEventListener("DOMContentLoaded",function(){
-      move();
-    });
+    h1{
+      text-align:center;
+    }
+    a{
+      text-decoration-line: none;
+      color:darkblue;
+    }
+    .answer {
+      display: none;
+      padding-bottom: 30px;
+    }
+    #faq-title {
+      font-size: 25px;
+    }
+    .faq-content {
+      border-bottom: 1px solid #e0e0e0;
+    }
+    .question {
+      font-size: 19px;
+      padding: 30px 0;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+    }
+    .question:hover {
+      color: #2962ff;
+    }
+    [id$="-toggle"] {
+      margin-right: 15px;
+    }
+    table{
+      width:500px;
+      border:2px solid white;
+      border-collapse: collapse;
+     }
+     th,td{
+       border:3px solid #F2F2F2
+;
+       padding:10px;
+       text-align: center;
+       background-color: white;
+       color:#003458;
+     }
+     th{
+       background-color: #003458;
+       color: white;
 
-  </script>
-</body>
+     }
+    </style>
 
+    <script src="./menu-script.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
+    <img style="width:100%";, src="Tourist.jpg">
+    <h2 class="tourist"; style="border-left:5px solid lightgrey; margin-left:5px;">キャナルシティ博多</h2>
+    <div class="tourist"; style="width:100%;">
+    <img style="width:300px" src="Canal City HAKATA.jpg" align="left">
+    <span>敷地面積約4万3500平方メートルを誇る大型複合商業施設。<br>
+      敷地中央を流れる運河を中心に、ショッピングモールやレストラン、ホテル、映画館、劇場などの建物が並び、
+      さらに3Dプロジェクションマッピングと噴水のアクアパノラマなどエンターテイメントも楽しめる。</span>
+      </div>
+      <div class="faq-content">
+        <button class="question" id="que-1">
+          <span id="que-1-toggle">+</span>
+          <span>Business Hour</span></button>
+        <div class="answer" id="ans-1">
+          <div style=font-weight:bold;>Always open</div>
+          <table>
+            <tr>
+              <th></th>
+                <th>Open</th>
+                <th>Close</th>
+              </tr>
+              <tr>
+            	<td style=font-weight:bold;>Shop</td>
+                <td>10:00</td>
+                <td>21:00</td>
+             </tr>
+             <tr>
+      	       <td style=font-weight:bold;> Restaurant</td>
+               <td>10:00</td>
+               <td>23:00</td>
+             </tr>
+            </table>
+        </div>
+      </div>
+      <div class="faq-content">
+        <button class="question" id="que-2"><span id="que-2-toggle">+</span>
+          <span>Parking</span></button>
+        <div class="answer" id="ans-2">
+        <table>
+          <tr>
+            <th></th>
+              <th>Maximum fee</th>
+              <th>Parking Fee</th>
+            </tr>
+            <tr>
+              <td style=font-weight:bold;>Weekday</td>
+              <td>All day</td>
+              <td>200yen/30minutes</td>
+           </tr>
+           <tr>
+             <td style=font-weight:bold;> Weekend</td>
+             <td>All day</td>
+             <td>200yen/30minutes</td>
+           </tr>
+         </table>
+       </div>
+      </div>
+      <div class="faq-content">
+        <button class="question" id="que-3"><span id="que-3-toggle">+</span>
+          <span>MAP</span></button>
+        <div class="answer" id="ans-3">
+
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106355.50395679117!2d130.33589100404257!3d33.589486911305755!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x354191958981c361%3A0xe0edba177a7419d1!2z44Kt44Oj44OK44Or44K344OG44Kj5Y2a5aSa!5e0!3m2!1sja!2sjp!4v1631259372959!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+      <h2 class="tourist"; style="border-left:5px solid lightgrey; margin-left:5px;">マリンワールド海ノ中道</h2>
+      <div class="tourist"; style="width:100%;">
+      <img style="width:300px" src="marineworld.jpg" align="left">
+      <span>「いつも新しい私になれる水族館」をコンセプトに、海をより身近に感じられるリゾート施設へリニューアルした。<br>
+        九州各県を代表する約350種類・3万匹の生物の展示、迫力あるイルカとアシカのショー、<br>
+        パネル展示や体験型ワークショップなど、楽しめる要素が満載。</span>
+
+      </div>
+
+      <div class="faq-content">
+        <button class="question" id="que-4">
+          <span id="que-4-toggle">+</span>
+          <span>Business Hour</span></button>
+        <div class="answer" id="ans-4">
+        <table>
+          <tr>
+            <th></th>
+              <th>Open</th>
+              <th>Close</th>
+            </tr>
+            <tr>
+            <td style=font-weight:bold;>off-season</td>
+              <td>9:30</td>
+              <td>17:30</td>
+           </tr>
+           <tr>
+             <td style=font-weight:bold;> GW/Summer holidays</td>
+             <td>9:30</td>
+             <td>21:00</td>
+           </tr>
+           <tr>
+           <td style=font-weight:bold;>Dec-Feb</td>
+             <td>10:00</td>
+             <td>17:00</td>
+          </tr>
+          <tr>
+            <td style=font-weight:bold;> Oct 30th Halloween night</td>
+            <td>9:30</td>
+            <td>21:00</td>
+          </tr>
+          <tr>
+            <td style=font-weight:bold;> Dec 24th 25th Christmas night </td>
+            <td>10:00</td>
+            <td>21:00</td>
+          </tr>
+          </table>
+      </div>
+    </div>
+      <div class="faq-content">
+        <button class="question" id="que-5"><span id="que-5-toggle">+</span>
+          <span>Entrance Fee</span></button>
+        <div class="answer" id="ans-5">
+        <table>
+          <tr>
+            <th></th>
+              <th>Adults</th>
+              <th>High School Students</th>
+            </tr>
+            <tr>
+            <td style=font-weight:bold;>Single</td>
+              <td>2,350 yen</td>
+              <td>2,350 yen</td>
+           </tr>
+           <tr>
+             <td style=font-weight:bold;> Annual Passport</td>
+             <td>4,600 yen</td>
+             <td>4,600 yen</td>
+           </tr>
+          </table>
+      </div>
+    </div>
+      <div class="faq-content">
+        <button class="question" id="que-6"><span id="que-6-toggle">+</span>
+          <span>Parking</span></button>
+        <div class="answer" id="ans-6">
+          <table>
+            <tr>
+              <th></th>
+                <th>truck/bus</th>
+                <th>passenger car</th>
+                <th>motorcycle</th>
+              </tr>
+              <tr>
+              <td style=font-weight:bold;>Parking Fee</td>
+                <td>1,580 yen</td>
+                <td>530 yen</td>
+                <td>270 yen</td>
+             </tr>
+            </table>
+          </div>
+      </div>
+      <div class="faq-content">
+        <button class="question" id="que-7"><span id="que-7-toggle">+</span>
+          <span>MAP</span></button>
+        <div class="answer" id="ans-7">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d150252.85021876488!2d130.32928876288386!3d33.679172442172344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35418db11a488b47%3A0xbf3a0dd967c4c244!2z44Oe44Oq44Oz44Ov44O844Or44OJ5rW344Gu5Lit6YGT!5e0!3m2!1sja!2sjp!4v1631259167309!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </div>
+
+  <h2 class="tourist"; style="border-left:5px solid lightgrey; margin-left:5px;">マリノアシティ福岡</h2>
+  <div class="tourist"; style="width:100%;">
+  <img style="width:300px" src="Marinoa City Fukuoka.jpg" align="left">
+  <span>大きな観覧車がランドマークのアウトレットモール。ファッション、インテリア、雑貨など人気のショップが集まり、<br>
+    休日には県内外から多くの客が詰めかける。海風が気持ちよく、散歩にもここちよいエリア。</span>
+
+  </div>
+  <div class="faq-content">
+    <button class="question" id="que-8">
+      <span id="que-8-toggle">+</span>
+      <span>Business Hour</span></button>
+    <div class="answer" id="ans-8">
+      <div style=font-weight:bold;>Always open</div>
+      <table>
+        <tr>
+          <th></th>
+            <th>Open</th>
+            <th>Close</th>
+          </tr>
+          <tr>
+          <td style=font-weight:bold;>Shop</td>
+            <td>10:00</td>
+            <td>21:00</td>
+         </tr>
+         <tr>
+           <td style=font-weight:bold;> Restaurant</td>
+           <td>11:00</td>
+           <td>23:00</td>
+         </tr>
+        </table>
+    </div>
+  </div>
+  <div class="faq-content">
+    <button class="question" id="que-9"><span id="que-9-toggle">+</span>
+      <span>Parking</span></button>
+    <div class="answer" id="ans-9">
+      <table>
+        <tr>
+          <th></th>
+            <th>Weekday</th>
+            <th>Weekend(holidays)</th>
+          </tr>
+          <tr>
+          <td style=font-weight:bold;>Parking Area 1</td>
+            <td>9:45~23:00</td>
+            <td>9:00~23:00</td>
+         </tr>
+         <tr>
+           <td style=font-weight:bold;>Parking Area 2</td>
+           <td>9:45~21:00</td>
+           <td>9:00~21:00</td>
+         </tr>
+         <tr>
+         <td style=font-weight:bold;>Parking Area 3</td>
+           <td>9:45~21:00</td>
+           <td>9:00~21:00</td>
+        </tr>
+        <tr>
+          <td style=font-weight:bold;> Parking Area 4</td>
+          <td>7:00~21:00</td>
+          <td>7:00~21:00</td>
+        </tr>
+        </table>
+      </div>
+  </div>
+  <div class="faq-content">
+    <button class="question" id="que-10"><span id="que-10-toggle">+</span>
+      <span>MAP</span></button>
+    <div class="answer" id="ans-10">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d89393.30975529479!2d130.31928467112942!3d33.62868145751785!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35419414e61b3fa7%3A0x634cbdca7f758190!2z44Oe44Oq44OO44Ki44K344OG44Kj56aP5bKh!5e0!3m2!1sja!2sjp!4v1631259483268!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+  </div>
+  <h2 class="tourist"; style="border-left:5px solid lightgrey; margin-left:5px;">太宰府天満宮・九州国立博物館</h2>
+  <div class="tourist"; style="width:100%;">
+  <img style="width:300px" src="tenmangu.jpg" align="left">
+  <span>新元号「令和」ゆかりの地として注目を集める太宰府。<br>
+    観光の中心となる「太宰府天満宮」は、学問の神様として有名な菅原道真公が祀られており、<br>
+    境内には、軍師官兵衛が晩年を過ごした「如水社」や、幕末に商人から寄付された「麒麟像」など、<br>
+    歴史を感じられるスポットが多数あります。<br>
+    鳥居前にある隈研吾氏が手がけたおしゃれな「スターバックスコーヒー」も人気です。
+  </span>
+
+  </div>
+  <div class="faq-content">
+    <button class="question" id="que-11">
+      <span id="que-11-toggle">+</span>
+      <span>Business Hour</span></button>
+    <div class="answer" id="ans-11">
+      <table>
+        <tr>
+          <th></th>
+            <th>Open</th>
+            <th>Close</th>
+          </tr>
+          <tr>
+          <td style=font-weight:bold;>太宰府天満宮</td>
+            <td>06:00</td>
+            <td>19:00(9月~11月) 18:00(12月~3月)</td>
+         </tr>
+         <tr>
+           <td style=font-weight:bold;> 九州国立博物館</td>
+           <td>09:30</td>
+           <td>17:00</td>
+         </tr>
+        </table>
+    </div>
+  </div>
+  <div class="faq-content">
+    <button class="question" id="que-12"><span id="que-12-toggle">+</span>
+      <span>Parking</span></button>
+    <div class="answer" id="ans-12">
+      <table>
+        <tr>
+          <th></th>
+            <th>Parking</th>
+          </tr>
+          <tr>
+          <td style=font-weight:bold;>太宰府天満宮</td>
+            <td>なし</td>
+         </tr>
+         <tr>
+           <td style=font-weight:bold;>九州国立博物館</td>
+           <td>500yen</td>
+         </tr>
+        </table>
+      </div>
+  </div>
+  <div class="faq-content">
+    <button class="question" id="que-13"><span id="que-13-toggle">+</span>
+      <span>MAP</span></button>
+    <div class="answer" id="ans-13">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6652.450321377395!2d130.5304641903171!3d33.52153109195884!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35419b9f2aebfbcd%3A0xb824d1aba75fae97!2z5aSq5a6w5bqc5aSp5rqA5a6u!5e0!3m2!1sja!2sjp!4v1631598493079!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>      </div>
+  </div>
+
+
+
+      <script>
+        const items = document.querySelectorAll('.question');
+
+        function openCloseAnswer() {
+          const answerId = this.id.replace('que', 'ans');
+
+          if(document.getElementById(answerId).style.display === 'block') {
+            document.getElementById(answerId).style.display = 'none';
+            document.getElementById(this.id + '-toggle').textContent = '+';
+          } else {
+            document.getElementById(answerId).style.display = 'block';
+            document.getElementById(this.id + '-toggle').textContent = '-';
+          }
+        }
+
+        items.forEach(item => item.addEventListener('click', openCloseAnswer));
+      </script>
+
+
+
+
+
+  </body>
 </html>
