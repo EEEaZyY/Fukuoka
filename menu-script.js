@@ -1,7 +1,7 @@
 //기본 데이터 SET JSON
 const menuDb = {
     pageName : 'Travel to Fukuoka', //홈페이지 이름
-    mainPage : 'index.html',    //로고 클릭시 링크
+    mainPage : '2.Home.html',    //로고 클릭시 링크
     logoTheme : '<i class="fab fa-affiliatetheme"></i>',   //FontAwesome 로고
     menuList : [    //메뉴 이름, 링크 url
         {
